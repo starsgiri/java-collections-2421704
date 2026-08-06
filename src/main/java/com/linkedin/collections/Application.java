@@ -1,5 +1,8 @@
 package com.linkedin.collections;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Application {
 
 	public static void main(String[] args) {
@@ -9,6 +12,22 @@ public class Application {
 		Room oxfordDuplicate = new Room("Oxford", "Suite", 5, 225.0);
 		Room victoria = new Room("Victoria", "Suite", 5, 225.00);
 
+		Set<Room> otherRooms = Set.of(piccadilly,oxford);
+
+		Set<Room> rooms = new HashSet<>();
+		rooms.add(piccadilly);
+		rooms.add(oxfordDuplicate);
+		rooms.add(oxford);
+		rooms.add(victoria);
+
+
+		Set<Room> moreRooms = Set.copyOf(rooms);
+
+		moreRooms.stream()
+						.map(r -> r.getName())
+								.forEach(System.out::println );
+
+		// rooms.stream().map(Room::getName).forEach(System.out::println);
 		
 	}
 }
