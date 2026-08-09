@@ -1,6 +1,8 @@
 package com.linkedin.collections;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Application {
@@ -14,7 +16,7 @@ public class Application {
 		Room victoria = new Room("Victoria", "Suite", 5, 225.0);
 		
 		List<Room> rooms = new ArrayList<>(List.of(piccadilly, oxfordGuest, cambridge, victoria, oxford));
-		
+		Collections.sort(rooms), Comparator.naturalOrder());
 		
 		
 		rooms.stream()
